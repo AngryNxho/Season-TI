@@ -10,36 +10,31 @@ const Symbols = {
     M:1000,
 }
 
-const Symbols2 = {
-    IV: 4,
-    IX: 9,
-}
+// const Symbols2 = {
+    // IV: 4,
+    // IX: 9,
+// }
+
 function check (arg) {
     let sum = 0;
-    let sum2 = 0;
+    let q = 0;
+    let y = 1;
     for (const [key, value] of Object.entries(Symbols)) {
         // console.log(key, value);
-        for (let z of arg) {
+        for (let z in arg) {
             if (key == z) {
                 sum += value;
             }
-        }
-
-    }
-    
-    for (const [key2, value2] of Object.entries(Symbols2)) {
-        for (let ii in arg) {
-            for (let q = 1; q < (arg.length); q++) {
-                if (arg[ii] + arg[q] == key2) {
-                    console.log(arg[ii], arg[q]);
-                    sum2 += value2;
-                }
-                
+            if (q < arg.length) {
+                q++; 
+                y++;
             }
         }
     }
 
-    return sum2;    
+
+ 
+    return sum;    
 }
 
 // console.log(check("IIIV"));
