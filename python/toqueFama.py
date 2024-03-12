@@ -32,11 +32,7 @@ def user():
                 toques += 1
 
             else:
-                index = []
-                for z in range(len(user_guess)):
-                    for i in range(len(save_secret)):
-                        if str(user_guess[z]) == str(save_secret[i]):
-                            famas += 1
+                
                         
         print(f"Toques: {toques} Famas: {famas} user {user_guess} code{save_secret}")
         toques = 0
