@@ -20,18 +20,23 @@ def user():
     lifes = number_length
     toques = 0
     famas = 0
-    save_secret = secret_code()
-    y=1
+    save_secret = "132" 
     while lifes != 0:
-        user_guess ="123" 
-        #input("Ingresa un numero: ")
+        user_guess = "123"
+        z = 0
         lifes-=1
         for x in user_guess:
-    
-            if (x in str(save_secret)):
+            
+            if (x in (save_secret)):
                 toques += 1
+                print(toques)
+                if user_guess[0] == save_secret[0]:
+                    famas += 1
+                            
+                    
 
-            else:
+
+            
                 
                         
         print(f"Toques: {toques} Famas: {famas} user {user_guess} code{save_secret}")
