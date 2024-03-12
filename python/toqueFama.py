@@ -14,29 +14,22 @@ def secret_code():
         current_number = random_number() 
         if (current_number not in secret_number):
             secret_number.append(current_number)
-    return secret_number
+    return str(secret_number)
 
 def user():
     lifes = number_length
     toques = 0
     famas = 0
-    save_secret = "132" 
+    z = 0
+    save_secret = secret_code() 
     while lifes != 0:
-        user_guess = "123"
-        z = 0
+        print(save_secret)
+        user_guess = input("Ingrese numero: ")
         lifes-=1
         for x in user_guess:
-            
-            if (x in (save_secret)):
+            if (x in str(save_secret)):
                 toques += 1
-                print(toques)
-                if user_guess[0] == save_secret[0]:
-                    famas += 1
-                            
-                    
-
-
-            
+                
                 
                         
         print(f"Toques: {toques} Famas: {famas} user {user_guess} code{save_secret}")
