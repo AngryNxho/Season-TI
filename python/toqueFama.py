@@ -5,41 +5,37 @@ number_length = 3
 # int(input("Set the length of your code: "))
 secret_number = []
 
+
 def random_number():
     return randint(1, 9)
 
-def check_number():
+def secret_code():
     while (len(secret_number) < number_length):
         current_number = random_number() 
         if (current_number not in secret_number):
             secret_number.append(current_number)
-    return secret_number
+    return str(secret_number)
 
-
-def loop_game():
+def user():
     lifes = number_length
-    while lifes >= 1:
-        user_guess = "123"
-        
+    toques = 0
+    save_secret = secret_code()
+    print(save_secret)
+    while lifes != 0:
+        user_guess = input("Ingresa un numero: ")
         lifes-=1
+        for x in user_guess:
+            if (x in save_secret):
+                toques += 1
+        print(f"Toques: {toques}")
+        toques = 0
 
-def start_game():
-    print(random_number())
-    print(check_number())
-    print(loop_game())
-    # lifes = number_length
-    # famas = 0
-    # i = 0
-    # user_guess = "123" 
-    # # input(f"Debes ingresar una secuencia {number_length} digitos: ")
-    # while len(user_guess) != number_length :
-    #     user_guess = "123"
-    #     # input(f"Debes ingresar una secuencia {number_length} digitos, Intentalo nuevamente: ")
-    #     if len(user_guess) == number_length:
-    #         break
+    return "hola"
+
+print(user())
     
-    # return user_guess;      
-print(start_game())
+# def start_game():
+#     return check_toques()
 
-
+# print(start_game())
 
