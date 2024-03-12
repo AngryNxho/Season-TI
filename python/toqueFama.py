@@ -1,7 +1,7 @@
 from random import randint
 
 
-number_length = 9
+number_length = 3
 # int(input("Set the length of your code: "))
 secret_number = []
 
@@ -23,25 +23,26 @@ def user():
     save_secret = secret_code()
     y=1
     while lifes != 0:
-        user_guess ="123406789" 
+        user_guess ="123" 
         #input("Ingresa un numero: ")
         lifes-=1
         for x in user_guess:
+    
             if (x in str(save_secret)):
                 toques += 1
 
             else:
+                index = []
                 for z in range(len(user_guess)):
-                    for i in (save_secret):
-                        if (user_guess[z] == str(i)):
+                    for i in range(len(save_secret)):
+                        if str(user_guess[z]) == str(save_secret[i]):
                             famas += 1
-
                         
-        print(f"Toques: {toques} Famas: {famas}")
+        print(f"Toques: {toques} Famas: {famas} user {user_guess} code{save_secret}")
         toques = 0
         famas = 0
 
-    return f"user {user_guess} code  {save_secret}"
+
 
 print(user())
     
