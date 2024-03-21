@@ -19,20 +19,34 @@ def secret_code():
 def user():
     lifes = number_length
     toques = 0
-    save_secret = secret_code()
-    print(save_secret)
+    famas = 0
+    z = 0
+    save_secret = secret_code() 
     while lifes != 0:
-        user_guess = input("Ingresa un numero: ")
+        print(save_secret)
+        user_guess = input("Ingrese numero: ")
         lifes-=1
         for x in user_guess:
-            if (x in save_secret):
+            if (x in str(save_secret)):
                 toques += 1
+<<<<<<< HEAD
         print(f"Toques: {toques}")
 
         
+=======
+                
+                
+                        
+        print(f"Toques: {toques} Famas: {famas} user {user_guess} code{save_secret}")
+>>>>>>> be6dd1c8548547625644b15a10e31fc00caffcc3
         toques = 0
+        famas = 0
 
+
+<<<<<<< HEAD
     return ""
+=======
+>>>>>>> be6dd1c8548547625644b15a10e31fc00caffcc3
 
 print(user())
     
