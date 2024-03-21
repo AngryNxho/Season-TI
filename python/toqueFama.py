@@ -28,9 +28,11 @@ def user():
             if (x in save_secret):
                 toques += 1
         print(f"Toques: {toques}")
+
+        
         toques = 0
 
-    return "hola"
+    return ""
 
 print(user())
     
