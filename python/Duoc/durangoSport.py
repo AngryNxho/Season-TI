@@ -1,17 +1,18 @@
 
 fin = False
-registros = [["654321", 2012, 'p', 'volvo', 'xd'], 
-    ["123456", 2012, 'p', 'volvo', 'xd'],
-    ["987654", 2010, 'p', 'toyota', 'lol'], 
-    ["456789", 2010, 'p', 'toyota', 'lol'],
-    ["333444", 2015, 'p', 'ford', 'haha'], 
-    ["555666", 2015, 'p', 'ford', 'haha'],
-    ["111222", 2018, 'p', 'chevrolet', 'rofl'], 
-    ["999888", 2018, 'p', 'chevrolet', 'rofl'],
-    ["777888", 2020, 'p', 'honda', 'lmao'], 
-    ["222333", 2020, 'p', 'honda', 'lmao']
+registros = [
+    
 ]
 
+# ["654321", 2012, 'p', 'volvo', 'xd'], 
+    # ["987654", 2010, 'p', 'toyota', 'lol'], 
+    # ["456789", 2010, 'p', 'toyota', 'lol'],
+    # ["333444", 2015, 'p', 'ford', 'haha'], 
+    # ["555666", 2015, 'p', 'ford', 'haha'],
+    # ["111222", 2018, 'p', 'chevrolet', 'rofl'], 
+    # ["999888", 2018, 'p', 'chevrolet', 'rofl'],
+    # ["777888", 2020, 'p', 'honda', 'lmao'], 
+    # ["222333", 2020, 'p', 'honda', 'lmao']
 i = 0
 
 while fin == False:
@@ -54,10 +55,20 @@ while fin == False:
         registros[i].append(modelo)
 
         i+= 1
-   
-    if inicio == 3:
+    if inicio == 2:
         patente = input("Ingrese la patente: ")
         for x in registros:
             if (x[0] == patente):
-                print(f"\n\nSu patente se encuentra registrada con estos datos: \n{x}")
-            
+                fecha = input("Ingresar fecha: ")
+                observaciones = input("Ingrese las observaciones: ")
+                i-= 1
+                registros[i].append(fecha)
+                registros[i].append(observaciones)
+                print(registros[i])
+
+    if inicio == 3:
+        patente = input("Ingrese la patente: ")
+
+        for y in registros:
+            if y[0] == patente:
+                print(f"Y es {y}")
