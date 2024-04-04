@@ -6,43 +6,24 @@ const Symbols = {
   C: 100,
   D: 500,
   M: 1000,
-  Z: 0,
 };
 
-const SymbolsR = {
-  IV: 4,
-  IX: 9,
-  XL: 40,
-  XC: 90,
-  CD: 400,
-  CM: 900,
-};
+var romanToInt = function (s) {
+  let result = 0;
+  for (let i = 0; i < s.length; i++) {
+    const currentSymbolValue = Symbols[s[i]];
+    const nextSymbolValue = Symbols[s[i + 1]];
 
-var intToRoman = function (num) {
-  let sum = 0;
-  let sum2 = 0;
-  let y = 1;
-
-  for (const [key, value] of Object.entries(Symbols)) {
-    for (let z of num) {
-      if (z == key) {
-        sum += value;
-      }
-
-      // else if (z + num[y] == key) {
-      // console.log(key, value);
-      // sum2 += value;
-      // }
-    }
-
-    for (const [a, b] of Object.entries(SymbolsR)) {
-      console.log(num);
+    if (nextSymbolValue && currentSymbolValue < nextSymbolValue) {
+      result += nextSymbolValue - currentSymbolValue;
+      i++;
+    } else {
+      result += currentSymbolValue;
     }
   }
-
-  return `${sum} - ${sum2}`;
+  return result;
 };
 
-console.log(intToRoman("VI"));
-// console.log(check("LVIII"));
-// console.log(intToRoman("MCMXCIV"));
+console.log(romanToInt("III")); // Output: 3
+console.log(romanToInt("LVIII")); // Output: 58
+console.log(romanToInt("MCMXCIV")); // Output: 1994
