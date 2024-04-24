@@ -1,7 +1,7 @@
 datos = []
 def grabar(*args):
     for x in args:
-        datos.append(x)
+        datos.append([x])
     return datos
 
 def buscar():
@@ -23,8 +23,11 @@ def Ejecutar (opcion):
         patente = '231jkla'
         # input("Ingrese la patente del auto: ")
         marca = "Mercedes"
-        # input("Ingrese la marca del auto: ")
+        while len(marca) > 18 or len(marca) < 3:
+            marca = input("Ingrese la marca del auto: ")
         precio = 200000
+        while precio < 3871:
+            precio = int(input("Ingrese el precio del auto: ")) 
         # int(input("Ingrese el precio del auto: "))
         multas = 2
         # input("Ingrese multas:  ")
@@ -32,12 +35,13 @@ def Ejecutar (opcion):
         # input("Ingrese la fecha de registro: ")
         nombre_dueño = 'Pedro Gonzales'
         # input("Ingrese el nombre del dueño: ")
-        (grabar(tipo, patente, marca, precio, multas, fecha_registro, nombre_dueño))
+        grabar(tipo, patente, marca, precio, multas, fecha_registro, nombre_dueño)
+        return "\nAuto Registrado\n"  
     elif (opcion == '2'):
-        print("opcion 2")
-
+        return f"\nse han encontrado los siguientes datos: {buscar()}\n"
     elif (opcion == '3'):
-        print(f"se han encontrado los siguientes datos: {buscar()} ")
+        print("opcion 3")
+      
         
     elif (opcion == '4'):
         i = 1
