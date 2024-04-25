@@ -1,15 +1,19 @@
 datos = []
-
+contador = 0
 def grabar(*args):
     vehiculo = list(args)
-
     datos.append(vehiculo)
+    
+
 def buscar():
     patente = input("Ingrese la patente que desea buscar: ")
-    for x in datos:
-        print(x, patente)
-
-    # return datos
+    z = 0
+    while z < len(datos):
+        if patente in datos[z]:
+            print(datos[z])
+            return f"\nTipo: {datos[z][0]}\nPatente: {datos[z][1]}\nMarca: {datos[z][2]}\nPrecio: {datos[z][3]}\nMonto Multa: {datos[z][4]}\nFecha Multa: {datos[z][5]}\nFecha Registro:\n{datos[z][6]}\nNombre Dueño: {datos[z][7]}"
+        z+= 1
+    # print(datos[indice])
 def imprimir_certificados(certificado, anotaciones, multas):
     return None
 
@@ -19,12 +23,12 @@ def salir():
 def Ejecutar (opcion):
     global i
     if (opcion == "1"):
-        tipo = "AUtomatico" 
+        tipo = "Automatico" 
         # input("Ingrese el tipo de auto: ")
         patente = "123" 
         # input("Ingrese la patente: ")
 
-        print(f"Esta patente en Datos `{patente in datos}")
+        # print(f"Esta patente en Datos `{patente in datos}")
         for x in datos:
             if patente in x:
                 print(f"\nLa patente {patente} ya se encuentra registrada")
@@ -49,7 +53,10 @@ def Ejecutar (opcion):
         # input("Ingrese la fecha de registro: ")
         nombre_dueño = "Gabriel"
         # input("Ingrese el nombre del dueño: ")
-        print(grabar(tipo, patente, marca, precio, monto_multa, fecha_multa,  fecha_registro, nombre_dueño))
+        # grabar(tipo, patente, marca, precio, monto_multa, fecha_multa,  fecha_registro, nombre_dueño)
+        grabar("Manual", "321", "Ford", 123000, 120301230312, "28/01/2023",  "28/01/2023", "ignacio")
+        grabar("Automático", "458", "Toyota", 54000, 850298509825, "15/03/2022", "15/03/2022", "maria")
+
         # grabar("Manual", "122", "FOrd", 123123, 123312321, "02/04/2022",  "02/04/2022", "Pedro pedro")
 
         return "\nAuto Registrado\n"  
